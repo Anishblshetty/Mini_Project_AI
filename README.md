@@ -1,4 +1,4 @@
-# 🚪 Easy Escape Room
+# 🚪Escape Room
 
 A simple, beginner-friendly browser-based escape room game with 3 fun puzzles to solve!
 
