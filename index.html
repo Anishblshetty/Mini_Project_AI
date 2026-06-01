@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Easy Room Escaper</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- START SCREEN -->
+  <div id="start-screen">
+    <div class="start-box">
+      <div class="start-emoji">🚪</div>
+      <h1>Easy Escape Room</h1>
+      <p>Solve 3 simple puzzles to escape the room!</p>
+      <ul class="start-tips">
+        <li>🔍 Click objects to inspect them</li>
+        <li>💡 Clues are shown clearly on screen</li>
+        <li>✅ Solve all 3 to unlock the door</li>
+      </ul>
+      <button id="start-btn">LET'S GO! 🚀</button>
+    </div>
+  </div>
+
+  <!-- GAME SCREEN -->
+  <div id="game-screen" class="hidden">
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <span>🏠 Mystery Room</span>
+      <div class="progress-wrap">
+        <span id="progress-text">0 / 3 solved</span>
+        <div class="progress-bar"><div id="progress-fill"></div></div>
+      </div>
+    </div>
+
+    <!-- ROOM -->
+    <div class="room">
+
+      <!-- OBJECTS -->
+      <div class="obj" id="obj-note" style="left:12%;top:55%" title="Sticky Note">
+        <span class="obj-emoji">📝</span>
+        <span class="obj-label">Note</span>
+      </div>
+
+      <div class="obj" id="obj-chest" style="left:42%;top:58%" title="Treasure Chest">
+        <span class="obj-emoji">📦</span>
+        <span class="obj-label">Chest</span>
+      </div>
+
+      <div class="obj" id="obj-clock" style="left:68%;top:25%" title="Wall Clock">
+        <span class="obj-emoji">🕐</span>
+        <span class="obj-label">Clock</span>
+      </div>
+
+      <div class="obj" id="obj-door" style="left:82%;top:40%" title="Exit Door">
+        <span class="obj-emoji" id="door-emoji">🔒</span>
+        <span class="obj-label">Exit</span>
+      </div>
+
+      <!-- CLUE BOARD (always visible) -->
+      <div class="clue-board">
+        <div class="clue-title">📋 CLUE BOARD</div>
+        <div class="clue-item" id="clue1">📝 Note says: "The code is the number of sides on a triangle, then a square, then a circle."</div>
+        <div class="clue-item" id="clue2">📦 Chest riddle: "I have 4 legs in the morning, 2 at noon, 3 at night. What am I?"</div>
+        <div class="clue-item" id="clue3">🕐 Clock shows: Count the hours on the left half + right half separately.</div>
+      </div>
+    </div>
+
+    <!-- POPUP MODAL -->
+    <div id="modal" class="modal hidden">
+      <div class="modal-card">
+        <button id="modal-close">✕</button>
+        <div id="modal-emoji" class="modal-emoji">🔍</div>
+        <h2 id="modal-title">Title</h2>
+        <p id="modal-clue" class="modal-clue"></p>
+        <div id="modal-body"></div>
+        <div id="modal-msg" class="modal-msg"></div>
+      </div>
+    </div>
+
+    <!-- WIN SCREEN -->
+    <div id="win-screen" class="hidden overlay">
+      <div class="win-card">
+        <div class="win-anim">🎉</div>
+        <h1>YOU ESCAPED!</h1>
+        <p>Great job solving all the puzzles!</p>
+        <div id="win-time" class="win-time"></div>
+        <button id="replay-btn">Play Again 🔄</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
