@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Word Scramble</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">🔤 WordScramble</div>
+    <div class="header-right">
+      <div class="score-box">
+        <span class="score-label">Score</span>
+        <span class="score-value" id="score">0</span>
+      </div>
+      <div class="score-box">
+        <span class="score-label">Best</span>
+        <span class="score-value" id="best">0</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+
+    <!-- Category badge -->
+    <div class="category-tag" id="categoryTag">🐾 Animals</div>
+
+    <!-- Timer bar -->
+    <div class="timer-wrap">
+      <div class="timer-bar" id="timerBar"></div>
+    </div>
+    <div class="timer-text" id="timerText">30s</div>
+
+    <!-- Scrambled word display -->
+    <div class="scramble-area">
+      <div class="scrambled-letters" id="scrambledLetters"></div>
+    </div>
+
+    <!-- Hint -->
+    <div class="hint-box" id="hintBox">
+      <span class="hint-icon">💡</span>
+      <span id="hintText">Click "Hint" to reveal the first letter</span>
+    </div>
+
+    <!-- Input -->
+    <div class="input-area">
+      <input
+        type="text"
+        id="answerInput"
+        placeholder="Type your answer..."
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+      />
+      <button class="btn-check" id="btnCheck" onclick="checkAnswer()">Check</button>
+    </div>
+
+    <!-- Feedback message -->
+    <div class="feedback" id="feedback"></div>
+
+    <!-- Action buttons -->
+    <div class="actions">
+      <button class="btn-secondary" onclick="useHint()">💡 Hint <span class="cost">−5pts</span></button>
+      <button class="btn-secondary" onclick="skipWord()">⏭ Skip</button>
+      <button class="btn-secondary" onclick="newGame()">🔄 New Game</button>
+    </div>
+
+    <!-- Progress dots -->
+    <div class="progress-dots" id="progressDots"></div>
+
+    <!-- Stats bar -->
+    <div class="stats-bar">
+      <div class="stat">
+        <div class="stat-num" id="statCorrect">0</div>
+        <div class="stat-lbl">Correct</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="statSkipped">0</div>
+        <div class="stat-lbl">Skipped</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="statStreak">0</div>
+        <div class="stat-lbl">Streak 🔥</div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Game Over Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-emoji" id="modalEmoji">🎉</div>
+      <h2 id="modalTitle">Round Complete!</h2>
+      <p id="modalMsg">You scored <strong id="modalScore">0</strong> points</p>
+      <div class="modal-stats">
+        <div class="mstat"><span id="mCorrect">0</span><small>Correct</small></div>
+        <div class="mstat"><span id="mSkipped">0</span><small>Skipped</small></div>
+        <div class="mstat"><span id="mStreak">0</span><small>Best streak</small></div>
+      </div>
+      <button class="btn-play-again" onclick="newGame()">Play Again 🚀</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
